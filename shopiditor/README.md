@@ -1,70 +1,110 @@
-# Getting Started with Create React App
+# Shopiditor
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A web-based code editor and execution environment where users can write, select the language for, and execute code snippets in multiple programming languages, viewing the output directly in the browser.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Code Editor**: Write and edit code with syntax highlighting
+- **Multiple Languages**: Currently supports JavaScript and C#
+- **Execution Environment**: Run your code and see the output in real-time
+- **Responsive Design**: Works well on both desktop and mobile devices
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Frontend**:
+  - React
+  - CodeMirror for code editing
+  - React Router for navigation
+  - Tailwind CSS for styling
+  
+- **Future Backend** (in development):
+  - ASP.NET Core for API
+  - Docker for secure code execution
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Node.js (v14.0.0 or higher)
+- npm (v6.0.0 or higher)
 
-### `npm run build`
+### Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/shopiditor.git
+   cd shopiditor
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Start the development server:
+   ```bash
+   npm start
+   ```
+   This will run the app in development mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-### `npm run eject`
+### Build for Production
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+To build the app for production:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm run build
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+This will create a `build` folder with optimized production files.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Project Structure
 
-## Learn More
+```
+shopiditor/
+├── public/               # Public assets
+├── src/                  # Source code
+│   ├── components/       # React components
+│   ├── constants/        # Constants and configuration
+│   ├── hooks/            # Custom React hooks
+│   ├── services/         # API services
+│   ├── styles/           # CSS/Styling files
+│   ├── utils/            # Utility functions
+│   ├── App.js            # Main application component
+│   ├── index.js          # Application entry point
+│   └── ...
+├── package.json          # Project dependencies and scripts
+└── README.md             # Project documentation
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Development Workflow
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. **Code Editor Component**: The main editor is implemented using CodeMirror.
+2. **Language Support**: Language modes are loaded from CodeMirror's modules.
+3. **UI Components**: Most UI components use Tailwind CSS utility classes and custom components.
+4. **Execution**: Currently implements a placeholder function that will be replaced with actual backend API calls.
 
-### Code Splitting
+## Future Enhancements
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Backend integration for code execution
+- User accounts and saved snippets
+- More programming languages
+- Advanced editor features (themes, keybindings, etc.)
+- Real-time collaboration
 
-### Analyzing the Bundle Size
+## Security Considerations
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Code execution will be securely sandboxed using Docker containers (in development)
+- Resource limits for CPU, memory, and execution time will be implemented
+- Full security audit before public deployment
 
-### Making a Progressive Web App
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-### Advanced Configuration
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+*Project created as part of the Shopiditor development initiative.*

@@ -1,0 +1,77 @@
+/* Global styles for Shopiditor */
+
+/* Import Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom colors */
+:root {
+  --primary-color: #3b82f6;
+  --secondary-color: #10b981;
+  --dark-bg: #1e293b;
+  --light-bg: #f8fafc;
+  --text-dark: #334155;
+  --text-light: #f1f5f9;
+}
+
+/* Custom component classes */
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded transition-colors;
+  }
+  
+  .btn-primary {
+    @apply bg-blue-600 text-white hover:bg-blue-700;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-200 hover:bg-gray-300 text-gray-800;
+  }
+  
+  .btn-success {
+    @apply bg-green-600 text-white hover:bg-green-700;
+  }
+  
+  .card {
+    @apply rounded-lg shadow-md overflow-hidden border border-gray-200;
+  }
+  
+  .card-header {
+    @apply p-4 bg-gray-50 border-b border-gray-200 font-medium;
+  }
+  
+  .card-body {
+    @apply p-4;
+  }
+}
+
+/* CodeMirror custom styling */
+.CodeMirror {
+  height: 100% !important;
+  font-family: 'Fira Code', monospace !important;
+  font-size: 14px !important;
+}
+
+.cm-s-material .CodeMirror-cursor {
+  border-left: 2px solid var(--primary-color) !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+} 
