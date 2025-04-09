@@ -21,41 +21,91 @@ A web-based code editor and execution environment where users can write, select 
   - ASP.NET Core for API
   - Docker for secure code execution
 
-## Getting Started
+## Development Environment Setup
 
 ### Prerequisites
 
-- Node.js (v14.0.0 or higher)
-- npm (v6.0.0 or higher)
+- Node.js 18.x or later
+- npm 9.x or later
+- .NET 7.0 SDK or later
 
-### Installation
+### Getting Started
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/shopiditor.git
-   cd shopiditor
-   ```
-
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-3. Start the development server:
-   ```bash
-   npm start
-   ```
-   This will run the app in development mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-### Build for Production
-
-To build the app for production:
+1. **Clone the repository**
 
 ```bash
-npm run build
+git clone <repository-url>
+cd shopiditor
 ```
 
-This will create a `build` folder with optimized production files.
+2. **Install Frontend Dependencies**
+
+```bash
+cd shopiditor
+npm install
+```
+
+3. **Start the Development Environment**
+
+To run both the frontend and backend together, use:
+
+```bash
+npm run start:dev
+```
+
+This will start:
+- The React development server at http://localhost:3000
+- The ASP.NET Core backend API at http://localhost:5000
+
+Alternatively, you can run them separately:
+
+```bash
+# Start just the frontend
+npm run start:frontend
+
+# Start just the backend
+npm run start:backend
+```
+
+4. **Build for Production**
+
+```bash
+npm run build:prod
+```
+
+This will create a production-ready build in the `build` folder.
+
+### Environment Configuration
+
+The application uses environment-specific configuration files:
+
+- `.env.development` - Used during development
+- `.env.production` - Used for production builds
+
+### API Integration
+
+The frontend communicates with the backend API for code execution. During development:
+
+- API calls are proxied from the React dev server to the backend
+- If the backend is not available, the app will run in offline mode with simulated code execution
+- Check the status indicator in the header to see if the backend is connected
+
+### Troubleshooting
+
+**API Connection Issues**
+
+If you see "Backend API not available" in the header:
+1. Check that the backend is running on port 5000
+2. Verify that the proxy is configured correctly in `package.json`
+3. Check browser console for CORS errors
+
+**Development Script Issues**
+
+If the `start:dev` script doesn't work correctly on your platform, try running the frontend and backend in separate terminals.
+
+### Security Note
+
+The current code execution is only suitable for development and uses an *unsafe* direct execution model. Do not deploy this to production without implementing the Docker-based sandboxing planned for Phase 3.
 
 ## Project Structure
 
